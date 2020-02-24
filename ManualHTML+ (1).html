@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang=es>
+	<head>
+		<title> Manual de HTML+ </title>
+		<meta charset=utf-8>
+		<meta name=author content=Olalla>
+		<link type="text/css" rel="stylesheet" href="ManualHTML+.css">
+    </head>
+<body>    
+<li><a href=#punto1>1.Formulario</a></li>
+<li><a href=#punto2>2.Etiquetas</a></li>
+<li><a href=#punto3>3.Entradas</a> </li>
+<li><a href=#punto4>4.Botones</a></li>
+<li><a href=#punto5>5.Menús</a></li>
+<li><a href=#punto6>6.Editor de texto</a></li>
+<li><a href=#punto7>7.Lista con valores posibles</a></li>
+<li><a href=#punto8>8.Marcos</a></li>
+<li><a href=#punto9>9.Multimedia</a></li>
+
+<pre class=formulario>
+
+<hr>
+    <u><elto id="punto1">1.FORMULARIO</elto></u>
+    Esta etiqueta se usa para hacer controles interactivos para que un usuario envíe cierta información
+
+    Etiqueta: 
+    	< form>
+    Dentro de esta etiqueta podemos añadir los argumentos:
+
+	    action(La URI de un programa que procesa la información que se ha pedido anteriormente)
+
+	    method(el método con el que se enviará el formulario)
+	    	get (se envia la URI) <!--predeterminado se pondrá get-->
+	    	post(los datos se incluyen en el cuerpo del formulario)
+
+	    enctype(es el tipo de MIME del contenido para enviar el formulario)
+           application/x-www-form-urlencoded
+          multipart/form-data
+         text/plain
+
+	    accept-charset(lista de codificación de caracteres que el servidor acepta)
+    
+</pre>
+<hr>
+<br>
+<pre class=etiqueta>
+    <u><elto id="punto2">2.ETIQUETA</elto></u>
+    Representa una etiqueta para la interfaz que recibe el usuario.
+    Etiqueta:
+    	< label>
+    Dentro de la etiqueta podemos añadir el argumento:
+	    for (se pondrá para identificar el ID del elemento)
+</pre>
+    <hr>
+    <br>
+<pre class=entrada>
+    <u><elto id="punto3">3.ENTRADA</elto></u>
+    Usaremos este control para meter controles interactivos
+    Etiqueta:
+	    < input>
+    Dentro de esta se pueden poner varios atributos
+        type(tipo de control que vamos a mostrar) <!--Como valor determinado será text--> 
+
+    Dentro de la etiqueta type podremos:
+
+    Para crear elementos de texto pondremos <i>type=text</i>
+    
+    Para enviar el formulario pondremos  <i>type=submit</i>
+   
+    Para controlar que se introducen números usaremos  <i>type=number</i>
+	    También tendremos que ponerle dentro un valor mínimo (min) y máximo (max) y un número real (value).
+    
+    Para crear casillas de selección usaremos  <i>type=checkbox</i>
+	    También tendremos que ponerle dentro unos valores como un nombre (name), visibilidad (value) <!--Está predeterminada en on--> y si queremos que de primeras este verificada (checked)  
+    
+    Para crear botones de opción y se despliega una pestaña <i>type=radio</i>
+	    También usaremos unos atributos como el nombre(name), la posición (value) y si queremos que de primeras este una por defecto (checked) 
+   
+    Para poner una casilla donde haya que poner una contraseña usaremos <i>type=password</i>
+   
+    Para poner un cuadro de texto para introducción textos de búsqueda <i>type=search</i>
+    
+    Para introducción un número telefónico <i>type=tel</i>
+   
+    Para introducir un campo que edite la URL <i>type=url</i>
+    
+    Para introducir un campo donde poner un correo electrónico <i>type=email</i>
+    
+    Si no necesitamos que se introduzcan números pero no importa el valor exacto usaremos <i>type=range</i>
+   
+    Si no es muy relevante que el control se vea en la pantalla usaremos <i>type=hidden</i>
+    
+    Podemos añadir imágenes <i>type=image src=nombreimagen.formato</i>
+    
+    Si queremos que el  usuario pueda seleccionar un archivo usaremos <i>type=file</i>
+   
+    Podemos añadir botones sin comportamiento <i>type=button</i>
+   
+    Y si el usuario se equivoca le podemos dar la opción de resetear el formulario con <i>type=reset</i>
+   
+    Podemos añadir el introducir una fecha con <i>type=date</i>
+    	Dentro podemos poner valores mínimos (min) y máximo(max)
+    
+    Si solo queremos el mes y el año <i>type=month</i>
+    
+    Para introducir solo el numero de semana del año <i>type=week</i>
+   
+    Controlar que solo sea un valor de tiempo <i>type=time</i>
+    
+    Y por último en fechas, si queremos poner el tiempo actual <i>type=datetime-local</i>
+    
+    Si queremos cambiar el colore de algo <i>type=color</i>
+</pre>
+<hr>
+<br>
+<pre class=botones>
+    <u><elto id="punto4">4.BOTONES</elto></u>
+    Crear botones marcadores
+    Etiqueta: 
+    	< button>
+    Dentro tambien habria que poner atributos 
+	    name(para poner un ID)
+	    value(valor inicial)
+	    type (tipo de botón puede tener valor: button|submit|reset)
+     disabled(si está deshabilitado) 
+
+    Ejemplo:
+    <button name=boton type="button"></button>
+    </pre>
+    <hr>
+    <br>
+    <pre class=menu>
+        <u><elto id="punto5">5.MENÚS</elto></u>
+    Para crear menús, usaremos dos etiquetas principales < select> y < option>
+
+    Dentro de la etiqueta < select> tendremos los atributos:
+    	name (para aplicarle un ID)
+    	size (representa el número de filas que serán visibles)
+    	múltiple(si se pueden seleccionar varios elementos del menú)
+
+    Dentro de la etiqueta < option> tendremos los atributos 
+	    value(el valor que será enviado en el formulario)
+	    selected (sí desde un principio está seleccionada)
+	    disabled (si está establecido, el elemento no se puede seleccionar)
+	    label (determina el significado de la opción)
+
+    También tenemos otra etiqueta grande pero no es tan principal < optgroup> que sirve para dividir una opción en dos valores
+       
+        Ejemplo de codigo:
+    < select name=select> 
+    < option value=1> 1< /option>
+    < optgroup label=dos>
+    < option value=dosa selected>2a< /option>
+    < option value=dosb>2b< /option>
+    < /optgroup>
+    < option value=3> 3< /option> 
+        < /select>
+
+    Que se ve asi:
+    <br>
+    <select name=select> 
+    <option value=1> 1</option>
+    <optgroup label=dos>
+    <option value=dosa selected>2a</option>
+    <option value=dosb>2b</option>
+    </optgroup>
+     <option value=3> 3</option> 
+    </select>
+
+</pre>
+<hr>
+<br>
+<pre class=editortexto>
+    <u><elto id="punto6">6.EDITOR DE TEXTO</elto></u>
+    Un control para la edición multitarea de un texto
+    Etiqueta:
+    	< textarea>
+    Dentro de este usaremos una serie de atributos
+	    name (nombre que el asignaremos)
+    	cols( anchura del control de texto
+	    rows(número de líneas visibles en el control)
+	    maxlength/minlength (máximo y mínimo número de caracteres)
+</pre>  
+    <hr>
+    <br>
+    <pre class=valores>
+        <u><elto id="punto7">7.LISTA CON VALORES POSIBLES</elto></u>
+    Cuando creamos una lista, podemos ponerle las etiquetas de < datalist> y < option>
+
+    En < datalist> pondremos el atributo id para darle un nombre cuando lo referenciamos
+    En < option> crearemos cada una de las opciones con el atributo < value>
+        
+</pre>
+<hr>
+<br>
+<pre class=marcos>
+    <u><elto id="punto8">8.MARCOS</elto></u>
+    Sirven para representar un contexto de navegación anidado que incrusta otra página en la nuestra.
+
+    Etiqueta: 
+    	< iframe>
+    Dentro del etiqueta pondremos los atributos:
+	    src (la dirección de la página)
+	    srcdoc (el contenido de la página que contiene)
+	    sandbox (aplica restricciones adicionales https://developer.mozilla.org/es/docs/Web/HTML/Elemento/iframe 
+	    allowfullscreen (para definir si se pone pantalla completa o no)
+        width/height(el tamaño que queramos que tenga la ventana)
+        <br>
+        <br>
+    <iframe src="http://iessierradeguara.com/wordpress/" allowfullscreen=true></iframe>
+
+    
+</pre>
+    <hr>
+    <br>
+    <pre class=multimedia>
+        <u><elto id="punto9">9.MULTIMEDIA</elto></u>
+    Podemos añadir multimedia como videos o música con las etiquetas de < audio> y < video>
+
+    Para < audio> usaremos el atributo src para poner la dirección junto a formato
+<!--No todos los navegadores soportan los mismos formatos--> 
+
+    Para < video> usaremos los atributos
+    	src (para poner la dirección)
+    	height/width (para las dimensiones de la ventana que queramos que salga para la reproducción del video)
+    	type (para ponerle el formato del video)
+    	poster (para crear una miniatura en la ventana del video)
+
+    Dentro de la etiqueta < video> ponemos < video controls> y después una serie de atributos que nos dejaran crear una especie de menu de reproduccion, pero podemos ponerle otros como <i> autoplay, muted, loop, preload</i> como funciones para aplicarle al video 
+
+    Otro recurso que podemos usar es el < track> que se usa para poner títulos, descripciones, capítulos o metadatos en los medios de audio y video.
+	
+    Dentro habrá atributos como:
+	    kind(para decir el tipo de track)
+	    	subtitle
+		    captions
+		    descriptions 
+		    chapters
+		    metadata
+        label(para darle una etiqueta)
+</pre>
+</body>
+</html>

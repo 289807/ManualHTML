@@ -1,0 +1,14 @@
+@media (min-width: 640px)
+and (max-width: 799px) {
+.cm1, .cm2, .cm3, .cm4, .cm5,
+.cm6, .cm7, .cm8, .cm9, .cm10,
+.cm11, .cm12 {
+float: left;
+border: 1px solid red;
+}
+.cm1 { width: 8.33%; }
+.cm2 { width: 16.66%; }
+}
+body {background-color: lightseagreen;}
+
+u{color: steelblue;}

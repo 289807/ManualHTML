@@ -1,0 +1,9 @@
+body{ background-color: indianred;
+        border:3em, indigo;}
+u{  font-style: italic;
+    font-variant: small-caps;
+    font-weight: normal;
+    font-size: medium;
+    line-height: 3em;
+    font-family: “Times New Roman”, serif;
+     }

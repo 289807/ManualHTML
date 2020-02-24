@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang=es>
+	<head>
+		<title> Manual de HTML </title>
+		<meta charset=utf-8>
+		<meta name=author content=Olalla>
+		<link type="text/css" rel="stylesheet" href="ManualHTML.css">
+    </head>
+    <body>
+        <!--indice del documento con los enlaces a las diferentes partes de este-->
+    <li><a href=#punto1>1.Sintaxis CSS</a></li>
+    <li><a href=#punto2>2.Colores</a></li>
+    <li><a href=#punto3>3.Clases</a></li>
+    <li><a href=#punto4>4.Unidades</a></li>
+    <li><a href=#punto5>5.Fuentes</a></li>
+    <li><a href=#punto6>6.Texto</a></li>
+    <li><a href=#punto7>7.Listas</a></li>
+    <li><a href=#punto8>8.Modelo de caja</a></li>
+    <li><a href=#punto9>9.Fondo</a></li>
+<br>
+<hr>
+<pre class="sintaxis">
+    <u><elto id="punto1">1.SINTAXIS CSS</elto></u>
+
+    Cualquier elemento que pongamos dentro del documento CSS, tendrá esta estructura:
+
+	    elemento {propiedad que queramos: valor asignado;}
+	
+	    Por ejemplo: 
+
+	    p { font-size: 1em;
+        color: blue; }
+
+    Pero primero para utilizar un documento html con un css asignado, tendremos que poner al principio de del css tendremos que linkearlo.
+
+        < link type=”text/css” rel=”stylesheet” href=”nombredelhtml.css” >
+</pre>
+<hr>
+<pre class="colores">
+    <u><elto id="punto2">2.COLORES</elto></u>
+
+    Para poner colores a los diferentes elementos, podemos usar:
+	
+    Un color por nombre (estos con solo poner el nombre se asignan):
+	    Algunos ejemplos:
+		    black, blue, lime
+
+    Un color con modelo RGB:
+	    Escrito en Hexadecimal #RRGGBB
+	    Escrito por octetos rgb(rojo, verde, azul)
+    	Escrito por porcentajes rgb(r%,v%,a%)
+
+    Para asegurarnos al poner los colores tenemos que tener en cuenta el daltonismo y algunos colores seguros son el 00 (negro) o el FF(blanco) 
+</pre>
+<br>
+<hr>
+<pre class="clases">
+    <u><elto id="punto3">3.CLASES</elto></u>
+
+    Podemos ponerle unos atributos específicos a los elementos que queramos, es decir, podemos poner un párrafo en azul con la letra grande y el de abajo rojo con la letra pequeña usando las clases.
+
+    Para hacer esto, en el CSS tendremos que poner el nombre del elemento luego un punto y después el nombre que queremos asignarle a esta clase.
+
+	    p.ejemplo{ … ;}
+
+    Y por otro lado, en el HTML cuando pongamos ese elemento tendremos que poner class seguido de un igual y el nombre de la clase que tengamos en el CSS. Claramente tienen que ser iguales.
+
+    	< p class=”ejemplo”>Así este texto que tengamos dentro de la etiqueta de párrafo,	estará con los atributos que le hayamos puesto en el CSS < /p>
+</pre>
+<br>
+<hr>
+<pre class="unidades">
+    <u><elto id="punto4">4. UNIDADES</elto></u>
+
+    Podemos modificar el tamaño de los elementos aplicando unidades a estos, estas pueden ser relativas, absolutas, ángulos, duration, frecuencia, resolución.
+
+    Si son relativas, serán:
+	    -em, rem
+	    -ex 
+    Si son absolutas, serán:
+	    -px, pt, pc
+	    -in, cm, mm
+    Si son ángulos, serán:
+	    -deg, grad, rad
+    Si son de duración, serán:
+	    -s, ms
+    Si son de frecuencia, serán: 
+	    -Hz, kHz
+    Y por último si son de resolución serán:
+        -dpi, dpcm, dppx
+
+</pre>
+<br>
+<hr>
+<pre class="fuentes">
+    <u><elto id="punto5">5.FUENTES</elto></u>
+            
+    Para poner atributos a una palabra u oración tenemos varios elementos:
+
+	    font-family
+	    	El tipo de fuente que queramos que tenga la letra
+		
+	    	Dentro de esta tenemos varios “apellidos” y dentro de estos varios “nombres”
+			    -serif
+				    Times New Roman
+				    Garamond
+			    -sans-serif
+			    	Arial
+				    Helvetica
+				    Verdana
+			    -monospace
+				    Courier
+				    Courier New
+			    -fantasy
+				    Western
+		
+		
+	    font-style 
+	    	El estilo que queramos ponerle 
+		
+		    Puede ser:
+			    -normal
+			    -italic
+			    -oblique
+	    font-weight
+		    El ancho que queramos que tenga la letra, en este hay unos tamaños preestablecidos pero podemos ponerle lo que queramos, siempre poniendo unidades.
+
+		    -bolder, lighter (100-900)
+		    -normal(400)
+		    -bold(700)
+
+	    font-height
+		    Esta propiedad establece distancia entre las líneas de texto, podemos ponerle dos valores
+		
+		    -normal (valor preestablecido)
+		    -mediada (la medida que queramos con su respectiva unidad)
+		
+		
+	
+	    font-variant
+		    Este elementos selecciona los aspectos para la familia de fuente
+		
+                    normal
+                    small-caps
+	
+	    font-size 
+		    El tamaño que queramos que tenga la fuente, puede ser:
+		
+		    -absoluto: xx-small, x-small, small, medium, large, x-large, xx-large
+		    -relativo: larger, smaller
+		    -medida (con su unidad correspondiente)
+
+        Para poner todos estos atributos dentro de un elemento, hay que seguir un orden:
+
+	        font-style font-variant font-weight font-size line-height font-family
+
+    Ejemplo:
+		  p { font-style: italic
+        font-variant: small-caps
+        font-weight: normal
+        font-size: medium
+        line-height: 3em
+        font-family: “Times New Roman”, serif;
+            }
+
+ </pre>
+<hr>
+<br>
+<pre class="texto">
+   <u><elto id="punto6">6.TEXTO</elto></u>
+
+    Podemos aplicarle varios elementos al texto, todos estos dentro del CSS
+
+    Sangrado 
+    text-indent
+	
+    Alineación y alineación vertical
+	    text-align			    vertical-align
+		    left				    baseline
+		    right				    middle
+		    center				    sub
+		    justify				    super
+						    text-top
+						    text-bottom
+						    top
+						    bottom
+
+
+
+    Transformación
+	    text-transform
+		    capitalize
+		    uppercase
+		    lowercase
+		    none
+
+    Espacios
+	    letter-spacing
+	    word-spacing
+
+    Rayado
+	    text-decoration
+		    none
+		    underline
+		    overline
+		    line-through
+		    blink
+    </pre>
+    <hr>
+    <br>
+<pre class="listas">
+    <u><elto id="punto7">7.LISTAS</elto></u>
+
+    Aquí también podemos crear listas, en este caso tendremos más atributos para darle a la lista.
+
+	    list-style-type (tipo de lista) <!-- por defecto va el punto-->
+		    Ordenadas: decimal, decimal-leading-zero, lower-roman, upper-roman, lower-greek, lower-latin, upper-latin, armenian, georgian, lower-alpha, upper-alpha
+		    No ordenadas: disc, circle, square
+
+	    list-style-image (para poner imagenes como marcador)
+
+	    list-style-position (para la posición del marcador en la tabla)
+		    Outside, inside
+
+	    list-style ( para usar los tres atributos de antes a la vez)
+		
+	
+    Ejemplo:
+
+    < ul class="pruebaTabla">
+        < li>1</li>
+        < li>2</li> 
+        < li>3</li>
+    < /ul>
+
+    .pruebaTabla { list-style: upper-alpha, inside;}
+</pre>
+<hr>
+<br>
+<pre class="modelo">
+    <u><elto id="punto8">8.MODELO DE CAJA</elto></u>
+
+    MARGEN
+        Tenemos el elemento para controlar los atributos del margen, estos atributos del margen van dentro de la etiqueta de <i>body</i>
+
+        margin-top (el margen superior)
+        margin-right (el margen de la derecha)
+        margin-bottom (el margen de inferior)
+        margin-left (el margen de la izquierda)
+
+    Pero también podemos agruparlos poniendo un <b>&</b>
+
+    Por ejemplo:
+        top right&left bottom
+
+    De esta manera los valores que le pongamos a uno se aplicaran en el otro, es decir el margen de la derecha será igual al de la izquierda.
+
+    BORDE
+        Normalmente si le ponemos márgenes a nuestro documento, pondremos también un borde, para ello usaremos la etiqueta border con el atributo correspondiente:
+
+        border-width 
+	Para ponerle un ancho al borde, este puede ser preestablecido poniendo las etiquetas de <i>thin, medium o thick </i> o podemos ponerle el que queramos siempre que usemos las unidades de medida.
+
+        border-style
+	Podemos modificar el estilo del borde con los valores
+		    none
+		    dotted
+	    	dashed
+		    solid
+		    double
+        groove
+		    ridge 
+		    inset
+		    outset
+		    hidden
+    border-color
+	    Para ponerle un color al borde
+
+    Ejemplo:
+	    p{ 
+	    	border-width: 3em;
+	    border-style: double;
+	    border-color: yellow;
+    }
+</pre>
+<HR>
+<BR>
+    <pre class="fondo">
+   <u><elto id="punto9">9.FONDO</elto></u>
+
+    También podemos darle algunos atributos al fondo de nuestro documento
+
+    background-color
+	    Pondremos todo el fondo de un color
+    background-image
+	    Para poner una imagen de fondo
+    background-repeat
+    	Para que la imagen de fondo que hayamos puesto, se repita. Podemos hacer que se repita de cierta forma.
+		    repeat-x (se repetirá la imagen en el eje x)
+            repeat-y (se repetirá la imagen en el eje y)
+            no-repeat (no se repetirá la imagen)
+            none (ningún valor)
+
+	
+	
+    background-attachment
+	    scroll (la imagen del fondo se repetirá cuando acabe mientras bajamos la scrollbar)
+	    fixed (la imagen de fondo estará estática mientras bajamos la scrollbar)
+
+    background-position
+    Define la posición inicial de la imagen que tengamos <!-- Como valor inicial tiene 0% 0%-->
+    Para darle valores usaremos un porcentaje o un valor predeterminado como top, left, center, right o bottom.
+</pre>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang=es>
+	<head>
+		<title> Manual de HTML </title>
+		<meta charset=utf-8>
+		<meta name=author content=Olalla>
+		<link type="text/css" rel="stylesheet" href="ManualCSSavanzado.css">
+    </head>
+<body>
+    <!--Introduccion del documento de los diferentes elementos aplicables en el CSS-->
+<p class=indice>
+
+    <li><a href=#punto1>1.Selectores</a></li>
+    <ul>
+    	<li>1.1 Combinaciones</li>
+	    <li>1.2 Pseudoclases</li>
+     <li>1.3Pseudoelementos</li>
+    </ul>
+    <li><a href=#punto2>2.Visualización</a></li>
+    <ul>
+    	<li>2.1 Posicionamiento</li>
+          <li>2.2 Elementos flotantes</li>
+            <li>2.3 Acceso</li>
+</ul>
+<li><a href=#punto2>3. Resolución de conflictos</a></li>
+<ul>
+    <li>3.1 Especificidad</li> 
+</ul>
+<li><a href=#punto2>4.Media Queries</a></li>
+<li><a href=#punto2>5.Diseños adaptables</a></li>
+</p>
+<pre class=selectores>
+    <br>
+    <hr>
+    <u><elto id="punto1">1.SELECTORES</elto></u>
+
+    Un selector puede ser de elemento (#idelemento) o de clase (.idclase).
+    Como ya sabemos, si queremos podemos ponerle unas propiedades a los elementos en nuestro documento CSS pero si los separamos por comas, todos adquieren las mismas propiedades
+
+    Ejemplo
+
+	    p,pre,h1{ atributos que queramos ponerle ; }
+
+    Si queremos que todos los elementos tengan las mismas propiedades, pondremos <b>*</b>
+
+
+    1.1 COMBINADORES
+	
+	Si el combinador es <b>+</b> son hermanos adyacentes, es decir, el segundo elemento sigue al primero.
+	Ejemplo:
+		p+li 
+	De esta forma se aplicará a todos los <b>li</b> seguidos directamente de <b>p</b>
+
+	    Si el combinadores es <b>~</b> son hermanos
+	    Ejemplo:
+	    	p~li 
+	De esta forma se aplicará a todos los <b>li</b> seguidos de <b>p</b>
+
+	    Si el combinador es <b>></b> serán hijos directos del primer elemento
+    Ejemplo:
+	    	p>li 
+	    De esta forma se aplicará a todos los <b>li</b> seguidos de <b>p</b>
+	
+	    Si el combinador es   (un espacio) son descendientes
+    Ejemplo:
+    		p li 
+    	De esta forma se aplicará a todos los <b>li</b> que estén dentro de <b>p</b>
+    1.2 PSEUDOCLASES
+    Estas permiten la selección de elementos, basándose en el estado de estos
+
+    Para los enlaces tenemos:
+	    :link (estara normal)
+	    :visited (cuando esté visitado el enlace)
+    Para las acciones del usuario
+	    :hover( cuando ha sido activado por el ratón)
+	    :focus (cuando ha sido activado por el teclado)
+	    :active (cuando ha sido pinchado)
+    Para los formularios
+	    :enabled(cuando está visible)
+	    :checked(cuando está comprobado)
+
+    1.3 PSEUDOELEMENTOS
+        ::first-line (aplica el estilo a la primera línea de un elemento)
+	    ::first-letter( aplica el estilo a la primera letra de un elemento)
+    </pre>
+        <br>
+        <hr>
+        <pre class=visualizacion>
+    <u><elto id="punto2">2.VISUALIZACIÓN</elto></u>
+<!-- ambos están al principio con valor inicial inline -->
+    La propiedad <b>visibility</b> y la propiedad <b>display</b> controlan los elementos que vemos y cuales no, ocultandolos de cada página.
+
+    La diferencia entre estas es que <b>visibility</b> crea el elemento y aunque no se vea, el propio navegador crea una caja de elemento pero los demás elementos no cambian su posición.
+
+    Por otro lado, <b>display</b> permite ocultar el elemento y los demás elementos que tengamos en la página, se desplazan para llenar el elemento que falta.
+
+    Dentro de <b>display</b> tenemos unos valores <b>inline, block y none </b>
+	    <i>Block</i> muestra como si fuera un bloque
+	    <i>Inline</i>  muestra el elemento como si fuera elemento en línea
+	    <i>Inline-block</i> es una combinación de los anteriores
+<!--tanto block como inline-block se les puede aplicar las etiquetas de dimensiones--> 
+	    <i>None</i>  oculta el elemento y lo hace desaparecer
+
+    2.1 POSICIONAMIENTO
+	    Cada navegador coloca como quiere las cajas en cada documento HTML pero con CSS podemos modificar eso, podemos alterar la posición de las cajas de 5 maneras diferentes:
+	    Posicionamiento estático(static): el que usa el navegador
+	    Posicionamiento relativo(relative): se posiciona como el normal y luego se desplaza de su posición original
+	    Posicionamiento absoluta(absolute): se establece respecto al elemento que la contiene y el resto de manera absoluta
+	    Posicionamiento fijo (fixed): siempre en la pantalla tendrá la misma posición
+	    Posicionamiento flotante(inherit): se desplazan todas las cajas a la izquierda o a la derecha.
+
+    2.2 ELEMENTOS FLOTANTES
+	    float: reposiciona objetos, no se superponen, a la derecha o a la izquierda
+	    clear: renueva el flujo, a la derecha, izquierda o ambos
+
+    2.3 ACCESO
+	    overflow: puede recortar contenido, dibujar barras o mostrar contenido
+	    	visible: no es recortado pero puede ser dibujado 
+	<!--valor por defecto visible-->
+		    hidden: es recortado y no muestra barra de posición
+		    scroll: recortado y el navegador usa barras de desplazamiento
+		    auto: depende del agente de usuario
+
+	    z-index: cuando varios elementos se superponen, este determina quien cubre a quien. Para comprobarlo, tiene que ir acompañado de un valor numérico
+</pre>
+<br>
+<hr>
+<pre class=resolcion>
+
+    <u><elto id="punto3">3.RESOLUCIÓN DE CONFLICTOS</elto></u>
+
+	    Nos guiamos por unos criterios:
+		    Origen: el último gana
+	    	Mezcla: no hay conflicto
+		    Herencia: el contenido es igual al anterior
+		    Especificidad
+<!--un apartado tan grande que se explica el solo en el punto 3.1-->
+
+    3.1 ESPECIFICIDAD 
+	    Cada navegador le da una importancia u otra a ciertos elementos, pero esta está basada en unas reglas, pero también se puede calcular el peso que se le da:
+		    Primero vemos si tiene etiqueta de <i>style</i>
+    Segundo si tiene <i>id</i>
+    En tercer lugar si tiene <i>clases</i>
+    Y por ultimo el numero de <i>elementos</i> 
+
+    Ejemplo:
+        < p style="color:red;">
+
+        <i>style</i> = 1
+        <i>id</i> = 0 			Especificidad= 1000
+        <i>clases</i> =0 
+        <i>elementos</i>= 0 
+</pre>
+<br>
+<hr>
+<pre class=media>
+
+    <u><elto id="punto4">4.MEDIA QUERIES</elto></u>
+	Sirven para modificar nuestra página en función del dispositivo que usemos para verla.
+
+	Características:
+		device-width(ancho del dispositivo)
+			min|max-device-width
+		device-height(largo del dispositivo)
+			min|max-device-height
+		orientation(orientación del dispositivo)
+			portrait|landscape
+		color(número de bits por color)
+		resolution(la resolución, dpi o dpcm)
+</pre>
+<br>
+<hr>
+<pre class=diseño>
+         <u><elto id="punto5">5.DISEÑO ADAPTABLE</elto></u>
+	    Nuestra página web, está dividida en 12 columnas, las podemos agrupar en 4 bloques de 3, 2 bloques de 6 o 3 bloques de 4.
+
+    Ejemplo de media query y diseño adaptable:
+	<div class=row>
+    <div class=" cm6"><p>Item1</p></div>
+    <div class=" cm6"><p>Item2 </p></div>
+    <div class=" cm6"><p>Item3</p></div>
+    <div class=" cm6"><p>Item4</p></div>
+    <div class=" cm6"><p>Item5</p></div>
+    <div class=" cm 6"><p>Item 6</p></div>
+    <div class=" cm6"><p>Item7</p></div>
+    <div class=" cm6"><p>Item8</p></div>
+    </div>
+</pre>
+</body>
+</html>

@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang=es>
+	<head>
+		<title> Manual de HTML </title>
+		<meta charset=utf-8>
+		<meta name=author content=Olalla>
+		<link type="text/css" rel="stylesheet" href="ManualHTML.css">
+    </head>
+<body>
+    <!--indice del documento con los enlaces a las diferentes partes de este-->
+    <li><a href=#punto1>1.Introducción a HTML</a>
+        <ul>
+        <li> 1.1 Crear el documento html</li>       
+           <li>1.2 Etiqueta  < head ></li>
+           <li>1.3 Etiqueta < body ></li>
+    </ul>
+    </li>  
+
+    <a href=#punto2>2. Agrupación</a>
+    <ul>
+       <li>2.1 Párrafo  y texto preformateado  </li> 
+        <li>2.2 Salto de línea  y líneas separadoras  </li>
+            <li>2.3 Listas  </li>
+        </ul>
+        </li>
+        <li><a href=#punto3>3. Elementos para el texto</a>
+        <ul>
+            <li> 3.1 Tipos de letra</li>
+                <li>3.2 Hiperenlace</li> 
+        </ul>
+            </li>
+   <li> <a href=#punto4>4. Imágenes</a></li>
+
+    <li><a href=#punto5>5. Mapas de imagen</a></li>
+
+        <li><a href=#punto6>6. Tablas</li></a>
+
+          <a href="#punto7"><li>7. Símbolos especiales</li></a>
+
+                <li><a href=#punto8>8. Modelos de contenido</a></li>
+    <pre class="1.1">
+        <br>
+        <hr>
+        <!--Las etiquetas basicas que tenemos que poner en cada documento HTML-->
+    <b class="encabezado"><strong><elto id="punto1">1.INTRODUCCION A HTML</elto></strong></b>
+        <u>1.1 Crear el documento html</u>
+
+    Para poner el tipo de documento 
+        < !doctype html >
+
+    Para poner cualquier etiqueta
+        < ejemplo >
+
+    Luego para cerrar cualquier etiqueta
+        </ ejemplo>
+
+    Si queremos poner cualquier atributo dentro de la etiqueta pero para cerrarlo no hay que poner el atributo
+        < ejemplo atributo=valor>  ….. < /ejemplo>
+
+    Todo documento HTML  tiene esta organización:
+    
+    < !doctype html >
+    < html lang=es>		(El elemento HTML indica el comienzo de nuestro documento, hay que cerrarlo al final. 
+                        También se puede indicar el idioma del documento dentro de esta etiqueta. )
+
+        < head>			(El elemento head es la cabecera de nuestro documento)
+    < /head>
+        < body>			(El elemento body es el cuerpo de nuestro documento)
+        < /body>
+    < /html>
+    </pre>
+    <pre clas="1.2">
+       <u>1.2 DENTRO DE LA ETIQUETA < head></u>
+    
+    Dentro de esta se pone el titulo del documento y para ejecutarlo queda así:
+        < head>
+        < title> Titulo documento </ title>
+        < /head>
+
+    También se ponen los metadatos para identificar el formato de codificación o el autor:
+       < head>
+       < title> Titulo documento </ title>
+       < meta charset=UTF-8>
+       < meta name=autor content=nombre>
+       </ head>
+    </pre>
+    <pre class="1.3">
+        <u>1.3 DENTRO DE LA ETIQUETA < BODY></u>
+
+            <i>Elemento heading</i>
+        Este elemento pone el texto que se encuentra dentro como un encabezado. 
+             Dependiendo de la importancia que queramos darle, lo pondremos en un nivel u otro, empezando por el primer nivel < h1> hasta el sexto nivel < h6>
+                  <h1>< h1> Este texto aparecera mas grande que < /h1>
+                  <h6>< h6> este text ya que este es de tipo 6< /h6> </h6>
+
+            <i>Elemento article</i>
+        Este elemento se usa cuando se quiere poner una publicación de un foro o revista que tiene contenido independiente
+            < article> publicación < /article>
+           
+            <i>Elemento section</i>
+        Este elemento se usa cuando se escribe una agrupación temática. Las etiquetas de section van dentro de otra etiqueta article.
+            < article>
+                < section> … < /section>
+            </ article>
+
+            <i>Elemento nav</i>
+        Este elemento representa una sección de una página cuyo propósito es proporcionar enlaces de navegación
+        < nav>
+            < p>Texto</ p>
+            < /nav>
+           
+            <i>Elemento aside</i>
+        Este elemento representa una sección de una página que consiste en contenido que está indirectamente relacionado con el contenido principal del documento
+        < aside>
+            < p>Texto< /p>
+        < /aside>
+                
+            <i>Elemento footer</i>
+        Este elemento crea un pie de página
+        < footer>
+         < address>
+                  Texto que queramos poner
+           < /address>
+        < /footer>
+           
+            <i>Elemento address</i>
+        Este elemento sirve para que el creador ponga información de contacto
+            < adress>
+                Tu direccion
+                Tu correo
+            < /adress>        
+    </pre>
+<pre class="2.1">
+    <hr>
+    <elto id="punto2">2. AGRUPACIÓN</elto>
+
+    <u>2.1 Párrafo y texto preformateado</u> 
+    
+    Para escribir un párrafo, usaremos la etiqueta < p>
+        < p> Esto es un párrafo < /p>
+    Para escribir un texto ya formateado como queremos, es decir, escribir en nuestro HTML el texto de la forma que queremos que se vea, usaremos la etiqueta < pre>. A parte, utilizará una letra monoespaciada.
+        < pre> Este texto 
+            aparecerá tal y como   
+                lo estoy escribiendo < /pre> 
+        </pre>
+    <pre class=2.2>
+    <u>2.2 Salto de línea  y líneas separadoras</u>
+
+    Para escribir un salto de línea, sin usar el elemento de preformateado, usaremos la etiqueta < br>. Esta etiqueta no necesita cerrarla y se puede poner donde se quiera.
+        El texto comienza aquí
+<br>
+<br>
+<br>
+<br>
+        Y termina aquí 
+
+    Y si queremos escribir con saltos de línea en los párrafos, usaremos < wbr>
+
+    Para escribir una línea separadora, usaremos la etiqueta < hr>. Al igual que la etiqueta de salto de línea, no hace falta el cierre de esta y se puede poner donde se quiera.
+    
+        Debajo hay una línea 
+        <hr>
+        Arriba hay una línea <br><br>
+        </pre>
+    <pre class="2.3">
+	<u>2.3 Listas</u>
+    Para crear elementos en una lista, utilizaremos la etiqueta < li>, podemos crear todos los que queramos.
+    Si queremos hacer una lista ordenada usaremos la etiqueta < ol>, en cambio, si queremos hacerlas desordenadas usaremos < ul>.
+    Por otro lado si la queremos definir,  podemos definir la descripción con la etiqueta < dl>, la etiqueta < dt> define los nombres y la etiqueta < dd> describe cada nombre.
+<ul>
+<dl> 
+<dt>Nick:</dt>
+<dd>289807</dd>
+<dt>Comida:</dt>
+<dd>Pizza</dd>
+<dt>Color:</dt>
+<dd>Rojo</dd>
+</dl>
+    También podemos añadir argumentos en las listas ordenadas, estos son:
+        < ol reversed>
+        < ol start”numero”>
+        < ol type=”tipo”>
+</pre>
+<pre class="3.1">
+    <hr>
+
+<!--Los diferentes elementos que podemos aplicarle al texto, ya sean el resaltado de letra como hacer que esten dentro de un hiperenlace-->
+<elto id="punto3">3. ELEMENTOS PARA EL TEXTO</elto>
+	<u>3.1 Tipos de letra (Resaltado)</u>
+    Hay siete tipos de resaltado, por un lado están: bastardilla, negrita y subrayado. Se ponen junto a la palabra o frase que se quiere resaltar. 
+        Bastardilla: < i>
+        Negrita: < b>
+        Subrayada: < u>
+    Cuando queramos dejar de resaltar las palabras, habrá que cerrar la etiqueta.
+
+    Ejemplo: <p> Este texto tiene <b>negrita</b>, <i>bastardilla</i> y <u>subrayado</u>
+
+    Otro elemento de resaltado es el énfasis < EM>, recalca una parte.
+    Para decir que una parte es importante usaremos < strong>
+    Si escribimos la “letra pequeña” de algo usaremos < small>
+    Por último, si queremos poner que el contenido es irrelevante, usaremos < s></p> </pre>   
+<pre class="3.2"> 
+    <u>3.2 Hiperenlace</u>
+    Para añadir un enlace en nuestro documento, usaremos la etiqueta < a href=”La dirección que queramos>Texto que queramos resaltar que nos lleve al enlace< /a>.
+    Tenemos la opción de poder movernos dentro de nuestro documento.
+    Usaremos dos etiquetas, donde queramos que nos lleve escribiremos < elto  id=anclaje>nos llevará a este sitio< /a>
+    Y por otro lado, para decir que desde esa palabra nos lleve usaremos < a href=#anclaje>cuando pinchemos nos llevará aqui< /a>
+    También podemos hacer lo mismo para que nos lleve al inicio del documento poniendo:
+        < a href=#top> 
+        Pincha <a href=#top>aqui</a> para ir al inicio de todo
+</pre>
+<pre class="4">
+<!--Añadir imagenes al documento, con todas las etiquetas necesarias, importante poner "alt" para una pequeña explicación de la foto-->
+<hr>
+    <elto id="punto4">4. IMÁGENES</elto>
+    Podemos introducir imagenes, de todos los tipos, con la etiqueta < src>. A esta etiqueta podemos añadir argumentos como el tamaño de la imagen(width y height)  y un texto alternativo (alt).
+        Ejemplo:
+            < img src="ladirecciondelafoto.elformato" width=500 height=500 alt=explicacion de la foto>
+    
+    Aqui aparece una imagen:
+    <img src="imagentrabajo.png" height="50" width="50" alt="Esta imagen es el logotipo de HTML y se usa como ejemplo">
+</pre>
+<hr>
+<pre class="5">
+    <!--Crear mapas de imagen para hacer los documentos HTML mas interactivos, se pueden usar para moverse por la propia pagina o a otro documento, es necesario que si queremos abrir otro HTML, este creado y bien formado-->
+    <elto id=punto5>5.MAPAS DE IMAGEN</elto>
+
+    Para crear un mapa de imagen, usaremos una referencia < img usemap=#referencia>
+    y el elemento del nombre donde lo referenciamos < map name=referencia>, dentro de esta última, pondremos la etiqueta < area> con los atributos, shape, coords, href, alt, download, target.
+    Quedando así:
+        < img usemap=#referencia>
+        < map name=referencia>
+        < area (aquí dentro los valores que les pongamos junto a los atributos)>
+
+    Si usamos el argumento coordenadas, tendremos que asignarle un tipo entre rect (las coordenadas van por las esquinas), circle(aquí añadiremos la x y la y del centro junto al radio)
+    o poly(cuando queramos hacer una figura que no sea ninguna de las anteriores, usaremos xN y yN)
+</pre>
+<hr>
+<pre class=6>
+       <elto id=punto6>6. TABLAS</elto>
+    Podemos crear y añadir tablas, para ello tendremos que usar 8 tipos de etiquetas.
+        < table> 		Para crear la tabla
+        < tr>			Para crear una fila, seguido se pondrá el texto que queramos que tenga
+        < td>			Para crear una columna, seguido se pondrá el texto que queramos que tenga
+        < th>			Para poner un encabezado a la tabla
+        < thead>		Sirve para poner un encabezado a la tabla
+        < tbody>		Sirve para añadir cuerpo a la tabla
+        < tfoot>		Sirve para crear el sumerio de la tabla
+        < caption>		Sirve para incluir leyendas en la tabla
+
+    Como a casi todos los elementos, le podremos añadir atributos, estos atributos afectan al borde, la expansión de la columna y la expansión de la fila.
+        Para el borde usaremos <b>border</b> (en la etiqueta < table>)
+        Para la expansión en columna usaremos <b>rowspan</b> (en las etiquetas < td> y < th>)
+        Para la expansión en la fila usaremos <b>colspan</b> (en las etiquetas < td> y < th>)
+        <!--El elemento strong también funcion aqui, esta aplicado en la primera fila-->
+    </pre>
+    <table border=2>
+        <th colspan="3">Ejemplo de tabla</th>
+        <tr>
+        <td><strong>Ejemplo</strong></td>
+        <td><strong>   De  </strong></td>
+        <td><strong> Tablas</strong></td>
+      </tr>
+      <tr>
+        <td >1</td>
+        <td>2</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+      </tr>
+    </table>
+<hr>
+<pre class="7">
+    <!--Algunos simbolos especiales que se pueden añardir cuando no sabemos el idioma que le hemos asignado o no nos lo puede leer el navegador-->
+<elto id="punto7">7.SÍMBOLOS ESPECIALES</elto>
+    Para poner un espacio en blanco pondremos
+	    &nbsp;
+    Para poner la ‘ñ’
+	    <b>&ntilde;</b>
+    Para poner acento agudo
+	    &aacute; &Eacute;
+    Hay más pero estos son los más usados, para saber más: 
+        <a href="https://dev.w3.org">pincha aqui</a>
+</pre>
+<br>
+<hr>
+<pre class=8>
+    <elto id=punto8>8.MODELO DE CONTENIDO</elto>
+    <br>
+    <img src="capturaa.png" width="300" height="300" alt="Imagen de modelo de contenido">
+</pre>
+</body>
+</html>
